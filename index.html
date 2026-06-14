@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team 10 — ESEC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+  --navy:#0f172a;
+  --blue:#2563eb;
+  --blue-soft:#eff6ff;
+  --blue-mid:#1d4ed8;
+  --slate:#475569;
+  --muted:#94a3b8;
+  --light:#f1f5f9;
+  --white:#ffffff;
+  --accent:#38bdf8;
+  --card-border:#e2e8f0;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--white);
+  color:var(--navy);
+  overflow-x:hidden;
+}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--card-border);
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 7%;
+}
+.logo{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:20px;font-weight:700;
+  color:var(--navy);
+  letter-spacing:-0.5px;
+}
+.logo span{color:var(--blue);}
+nav ul{list-style:none;display:flex;gap:30px;}
+nav ul li a{
+  text-decoration:none;color:var(--slate);
+  font-size:14px;font-weight:500;
+  transition:color .2s;
+}
+nav ul li a:hover{color:var(--blue);}
+.nav-cta{
+  padding:9px 22px;
+  background:var(--blue);color:var(--white);
+  border-radius:8px;font-size:14px;font-weight:600;
+  text-decoration:none;transition:background .2s;
+}
+.nav-cta:hover{background:var(--blue-mid);}
+
+/* ── HERO ── */
+.hero{
+  min-height:92vh;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  text-align:center;
+  padding:80px 7% 60px;
+  background:linear-gradient(160deg,#f8faff 0%,#eff6ff 50%,#f0f9ff 100%);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;
+  width:700px;height:700px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 70%);
+  top:-150px;right:-150px;pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;
+  width:500px;height:500px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(56,189,248,.07) 0%,transparent 70%);
+  bottom:-100px;left:-100px;pointer-events:none;
+}
+.hero h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(48px,8vw,86px);
+  font-weight:700;letter-spacing:-2px;
+  line-height:1.05;
+  color:var(--navy);
+  margin-bottom:24px;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(90deg,#2563eb,#38bdf8);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero p{
+  max-width:680px;
+  color:var(--slate);
+  font-size:18px;line-height:1.8;
+  margin-bottom:44px;
+}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{
+  padding:14px 32px;background:var(--blue);color:var(--white);
+  text-decoration:none;border-radius:10px;font-weight:700;font-size:15px;
+  transition:background .2s,transform .15s;
+}
+.btn-primary:hover{background:var(--blue-mid);transform:translateY(-2px);}
+.btn-ghost{
+  padding:14px 32px;border:1.5px solid var(--card-border);
+  color:var(--navy);text-decoration:none;border-radius:10px;
+  font-weight:600;font-size:15px;
+  transition:border-color .2s,transform .15s;
+}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);}
+
+/* ── STATS ── */
+.stats{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:0;
+  margin-top:70px;position:relative;z-index:1;
+  border-top:1px solid var(--card-border);
+  padding-top:50px;
+}
+.stat{
+  text-align:center;padding:0 50px;
+  border-right:1px solid var(--card-border);
+}
+.stat:last-child{border-right:none;}
+.stat-number{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:40px;font-weight:700;color:var(--navy);
+}
+.stat-number span{color:var(--blue);}
+.stat-label{font-size:13px;color:var(--muted);margin-top:4px;font-weight:500;}
+
+/* ── SECTION BASE ── */
+section{padding:90px 7%;}
+.section-label{
+  display:inline-block;
+  font-size:12px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:var(--blue);
+  margin-bottom:14px;
+}
+.section-title{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(30px,4vw,46px);font-weight:700;
+  letter-spacing:-1px;color:var(--navy);margin-bottom:14px;
+}
+.section-sub{
+  color:var(--slate);font-size:17px;line-height:1.7;
+  max-width:620px;
+}
+
+/* ── ABOUT ── */
+#about{background:var(--light);}
+.about-inner{max-width:800px;}
+.about-chips{
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;
+}
+.chip{
+  padding:7px 18px;background:var(--white);
+  border:1px solid var(--card-border);
+  border-radius:99px;font-size:13px;font-weight:500;color:var(--slate);
+}
+
+.mini-card{
+  background:var(--light);border-radius:16px;
+  padding:28px;border:1px solid var(--card-border);
+  transition:border-color .2s,transform .2s;
+}
+.mini-card:hover{border-color:var(--blue);transform:translateY(-3px);}
+.mini-card-icon{font-size:24px;margin-bottom:12px;}
+.mini-card h4{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:15px;font-weight:700;margin-bottom:6px;color:var(--navy);
+}
+.mini-card p{font-size:13px;color:var(--slate);line-height:1.6;}
+
+/* ── TEAM ── */
+#members{background:var(--light);}
+.team-header{
+  display:flex;justify-content:space-between;
+  align-items:flex-end;margin-bottom:50px;
+}
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+.member-card{
+  background:var(--white);border-radius:18px;
+  padding:32px 28px;
+  border:1px solid var(--card-border);
+  transition:border-color .2s,transform .2s,box-shadow .2s;
+  position:relative;overflow:hidden;
+}
+.member-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,#2563eb,#38bdf8);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s;
+}
+.member-card:hover::before{transform:scaleX(1);}
+.member-card:hover{
+  border-color:transparent;
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(37,99,235,.12);
+}
+.member-avatar{
+  width:80px;height:80px;border-radius:50%;
+  object-fit:cover;
+  border:3px solid var(--blue-soft);
+  margin-bottom:18px;
+}
+.member-name{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:17px;font-weight:700;color:var(--navy);margin-bottom:4px;
+}
+.member-role{
+  font-size:12px;font-weight:700;
+  color:var(--blue);letter-spacing:.5px;
+  text-transform:uppercase;margin-bottom:14px;
+}
+.member-bio{
+  font-size:13px;color:var(--slate);
+  line-height:1.7;margin-bottom:22px;
+}
+.view-btn{
+  font-size:13px;font-weight:600;color:var(--blue);
+  text-decoration:none;
+  display:inline-flex;align-items:center;gap:6px;
+  transition:gap .2s;
+}
+.view-btn:hover{gap:10px;}
+.arrow{font-size:16px;}
+
+/* ── CONTACT ── */
+#contact{
+  background:var(--navy);color:var(--white);text-align:center;
+}
+#contact .section-label{color:var(--accent);}
+#contact .section-title{color:var(--white);}
+#contact .section-sub{color:#94a3b8;margin:0 auto 50px;}
+.contact-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;max-width:800px;margin:0 auto;
+}
+.contact-item{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;padding:28px 24px;
+  transition:background .2s;
+}
+.contact-item:hover{background:rgba(255,255,255,.09);}
+.contact-icon{font-size:26px;margin-bottom:10px;}
+.contact-type{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#64748b;margin-bottom:6px;}
+.contact-value{font-size:14px;color:#e2e8f0;font-weight:500;}
+
+/* ── FOOTER ── */
+footer{
+  background:#070d1a;
+  color:#64748b;text-align:center;
+  padding:28px;font-size:13px;
+}
+footer strong{color:#94a3b8;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .about-inner,.project-wrapper{grid-template-columns:1fr;}
+  .team-header{flex-direction:column;align-items:flex-start;gap:16px;}
+  .stat{padding:0 30px;}
+}
+@media(max-width:600px){
+  nav ul{gap:14px;}
+  .stats{flex-direction:column;gap:30px;}
+  .stat{border-right:none;border-bottom:1px solid var(--card-border);padding-bottom:24px;}
+  .stat:last-child{border-bottom:none;}
+  nav{padding:14px 5%;}
+  section{padding:70px 5%;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">TEAM <span>10</span></div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#members">Team</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Building Solutions<br><em>Through Technology</em></h1>
+  <p>
+    We are Computer Science Engineering students from Erode Sengunthar Engineering College
+    passionate about software development, web technologies, and creating innovative solutions
+    that make a real difference.
+  </p>
+  <div class="hero-btns">
+    <a href="#members" class="btn-primary">Meet The Team →</a>
+    <a href="#about" class="btn-ghost">About Us</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-number"><span>5</span></div>
+      <div class="stat-label">Team Members</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number"><span>6+</span></div>
+      <div class="stat-label">Technologies</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number"><span>100%</span></div>
+      <div class="stat-label">Team Dedication</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <span class="section-label">Who We Are</span>
+    <h2 class="section-title">A team built for real-world problems</h2>
+    <p class="section-sub">
+      Team 10 brings together dedicated CSE students with expertise spanning Full Stack Development,
+      Java Programming, Web Technologies, Data Analytics, Database Management,
+      and Software Engineering. We collaborate, learn, and build together.
+    </p>
+    <div class="about-chips">
+      <span class="chip">Full Stack Dev</span>
+      <span class="chip">Java & JSP</span>
+      <span class="chip">MySQL</span>
+      <span class="chip">Data Analytics</span>
+      <span class="chip">Web Design</span>
+      <span class="chip">Software Engineering</span>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="members">
+  <div class="team-header">
+    <div>
+      <span class="section-label">The People</span>
+      <h2 class="section-title">Meet Our Team</h2>
+    </div>
+    <p style="color:var(--slate);font-size:14px;max-width:280px;line-height:1.6;">
+      Five developers. One shared goal: building software that works.
+    </p>
+  </div>
+
+  <div class="team-grid">
+
+    <div class="member-card">
+      <img src="images/vinodini.jpeg" alt="Vinodini G" class="member-avatar">
+      <div class="member-name">Vinodini G</div>
+      <div class="member-role">Full Stack Developer</div>
+      <p class="member-bio">Java enthusiast passionate about building practical web applications with clean, maintainable code.</p>
+      <a href="vinodini.html" class="view-btn">View Profile <span class="arrow">→</span></a>
+    </div>
+
+    <div class="member-card">
+      <img src="images/vinisha.jpeg" alt="Vinisha Ravikumar" class="member-avatar">
+      <div class="member-name">Vinisha Ravikumar</div>
+      <div class="member-role">Full Stack Developer</div>
+      <p class="member-bio">Focused on creating responsive and modern web applications with great attention to user experience.</p>
+      <a href="vinisha.html" class="view-btn">View Profile <span class="arrow">→</span></a>
+    </div>
+
+    <div class="member-card">
+      <img src="images/sri_dhanuska.jpeg" alt="Sri Dhanuska S J" class="member-avatar">
+      <div class="member-name">Sri Dhanuska S J</div>
+      <div class="member-role">Software Developer</div>
+      <p class="member-bio">Interested in software development, data science and analytics, with a sharp eye for detail.</p>
+      <a href="sri_dhanuska.html" class="view-btn">View Profile <span class="arrow">→</span></a>
+    </div>
+
+    <div class="member-card">
+      <img src="images/saran_raj.jpeg" alt="Saran Raj" class="member-avatar">
+      <div class="member-name">Saran Raj</div>
+      <div class="member-role">Data Analyst & Web Dev</div>
+      <p class="member-bio">Passionate about analytics, programming and web technologies — turning data into meaningful insights.</p>
+      <a href="saran_raj.html" class="view-btn">View Profile <span class="arrow">→</span></a>
+    </div>
+
+    <div class="member-card">
+      <img src="images/kamalishree.jpeg" alt="Kamalishree T" class="member-avatar">
+      <div class="member-name">Kamalishree T</div>
+      <div class="member-role">Tech Enthusiast</div>
+      <p class="member-bio">A motivated learner always exploring new technology and creative solutions with a growth mindset.</p>
+      <a href="kamalishree.html" class="view-btn">View Profile <span class="arrow">→</span></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <span class="section-label">Get In Touch</span>
+  <h2 class="section-title">Let's Connect</h2>
+  <p class="section-sub">
+    Have a project idea or want to collaborate? Reach out to Team 10 —
+    we're always open to new opportunities.
+  </p>
+
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-icon">📧</div>
+      <div class="contact-type">Email</div>
+      <div class="contact-value">vinodini2437@gmail.com</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📱</div>
+      <div class="contact-type">Phone</div>
+      <div class="contact-value">+91 9080699606</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div class="contact-type">Location</div>
+      <div class="contact-value">Erode, Tamil Nadu</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <strong>Team 10 · Trevox</strong> — Erode Sengunthar Engineering College</p>
+</footer>
+
+</body>
+</html>

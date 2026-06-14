@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Dhanuska | Portfolio</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+html{
+    scroll-behavior:smooth;
+}
+body{
+    background:#f4f6f9;
+    color:#333;
+    line-height:1.6;
+}
+.container{
+    width:85%;
+    margin:auto;
+}
+header{
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+header p{
+    font-size:1.2rem;
+    margin-bottom:20px;
+}
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:white;
+    color:#2563eb;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+    transition:0.3s;
+}
+.btn:hover{
+    background:#dbeafe;
+}
+section{
+    padding:60px 0;
+}
+h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#2563eb;
+    font-size:2rem;
+}
+.card,
+.project-card{
+    background:white;
+    padding:20px;
+    margin:15px 0;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+.card:hover,
+.project-card:hover{
+    transform:translateY(-5px);
+}
+.skill-box{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+.skill-box span{
+    background:#2563eb;
+    color:white;
+    padding:10px 20px;
+    border-radius:25px;
+    font-size:14px;
+}
+ul{
+    list-style:none;
+}
+ul li{
+    background:white;
+    padding:15px;
+    margin:10px 0;
+    border-left:5px solid #2563eb;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+.contact{
+    text-align:center;
+}
+.social-links{
+    margin-top:20px;
+}
+.social-links a{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 20px;
+    border-radius:5px;
+    margin:5px;
+    display:inline-block;
+}
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+@media(max-width:768px){
+    header h1{
+        font-size:2rem;
+    }
+    .container{
+        width:95%;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Sri Dhanuska SJ</h1>
+        <p>Aspiring Software Developer | Java | Python | Frontend | Power BI</p>
+        <a href="#contact" class="btn">Contact Me</a>
+    </div>
+</header>
+<section id="about">
+    <div class="container">
+        <h2>About Me</h2>
+        <div class="card">
+            <p>
+                I am a Computer Science and Engineering student passionate about
+                software development, web technologies, data science and business intelligence.
+                I enjoy building practical projects and continuously learning new technologies.
+            </p>
+        </div>
+    </div>
+</section>
+<section id="education">
+    <div class="container">
+        <h2>Education</h2>
+        <div class="card">
+            <h3>BE Computer Science and Engineering</h3>
+            <p>Erode Sengunthar Engineering College, Perundurai</p>
+        </div>
+        <div class="card">
+            <h3>Higher Secondary Education</h3>
+            <p>Kids Club Matric Higher Secondary School, Tiruppur</p>
+        </div>
+    </div>
+</section>
+<section id="experience">
+    <div class="container">
+        <h2>Experience</h2>
+        <div class="card">
+            <h3>Data Science Virtual Internship</h3>
+            <p><strong>March 2026 - April 2026</strong></p>
+            <p>
+                Gained hands-on experience in data analysis, data handling,
+                and understanding data science workflows.
+            </p>
+        </div>
+    </div>
+</section>
+<section id="skills">
+    <div class="container">
+        <h2>Skills</h2>
+        <div class="skill-box">
+            <span>Python</span>
+            <span>Java</span>
+            <span>SQL</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Power BI</span>
+            <span>Git & GitHub</span>
+            <span>Excel</span>
+        </div>
+    </div>
+</section>
+<section id="projects">
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <h3>Student Management System</h3>
+            <p>Developed CRUD operations using Java and SQL.</p>
+        </div>
+        <div class="project-card">
+            <h3>E-Commerce Website</h3>
+            <p>Designed and developed a responsive website using HTML, CSS and JavaScript.</p>
+        </div>
+        <div class="project-card">
+            <h3>Password Generator</h3>
+            <p>Built a secure password generator using Python.</p>
+        </div>
+    </div>
+</section>
+<section id="certifications">
+    <div class="container">
+        <h2>Certifications</h2>
+        <ul>
+            <li>Deloitte Certified Data Analyst</li>
+            <li>Infosys Certified Java Developer</li>
+            <li>Infosys Certified Python Developer</li>
+            <li>Microsoft Certified SQL Programmer</li>
+            <li>British Airways Certified Data Science Developer</li>
+        </ul>
+    </div>
+</section>
+<section id="contact">
+    <div class="container contact">
+        <h2>Contact</h2>
+
+        <p><strong>Email:</strong> sridhanuska006@gmail.com</p>
+        <p><strong>Location:</strong> Tiruppur, Tamil Nadu</p>
+
+        <div class="social-links">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </div>
+</section>
+<footer>
+    <p>© 2026 Sri Dhanuska SJ | Portfolio Website</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vinisha Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#111827;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    color:#38bdf8;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:10px;
+}
+
+.hero span{
+    color:#38bdf8;
+}
+
+.hero h3{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    margin-bottom:25px;
+    color:#d1d5db;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 30px;
+    background:#38bdf8;
+    color:black;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+section{
+    padding:80px 8%;
+}
+
+section h2{
+    text-align:center;
+    color:#38bdf8;
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.about-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:40px;
+}
+
+.about-container img{
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    border:5px solid #38bdf8;
+    object-fit:cover;
+}
+
+.about-container p{
+    max-width:600px;
+    line-height:1.8;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+
+.skill-card{
+    background:#1e293b;
+    padding:25px;
+    text-align:center;
+    border-radius:10px;
+    transition:0.4s;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+    background:#38bdf8;
+    color:black;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.project-card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:10px;
+    transition:0.4s;
+}
+
+.project-card:hover{
+    transform:scale(1.05);
+}
+
+.project-card h3{
+    margin-bottom:15px;
+    color:#38bdf8;
+}
+
+form{
+    max-width:600px;
+    margin:auto;
+}
+
+input,textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:8px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    background:#38bdf8;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+footer{
+    background:#111827;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+    }
+
+    nav ul{
+        margin-top:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .about-container{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<nav>
+    <div class="logo">Portfolio</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="home" class="hero">
+    <div>
+        <h1>Hello, I'm <span>Vinisha</span></h1>
+        <h3>Full Stack Developer</h3>
+        <p>Building modern and responsive websites with clean design.</p>
+        <a href="#" class="btn">Download Resume</a>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+
+    <div class="about-container">
+        <img src="images/vinisha.jpeg" alt="Profile">
+
+        <p>
+            I am a passionate Full Stack Developer and Computer Science
+            student with strong skills in HTML, CSS, Java, Spring Boot,
+            MySQL, and Web Development. I enjoy building responsive
+            websites and solving real-world problems through technology.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+
+    <div class="skills-grid">
+        <div class="skill-card">HTML</div>
+        <div class="skill-card">CSS</div>
+        <div class="skill-card">JavaScript</div>
+        <div class="skill-card">Java</div>
+        <div class="skill-card">Spring Boot</div>
+        <div class="skill-card">MySQL</div>
+        <div class="skill-card">React</div>
+        <div class="skill-card">GitHub</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <h3>Student Management System</h3>
+            <p>
+                Developed using Java, Spring Boot and MySQL for
+                managing student records efficiently.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Portfolio Website</h3>
+            <p>
+                Responsive portfolio website built using HTML and CSS.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>E-Commerce Website</h3>
+            <p>
+                Online shopping platform with product catalog and
+                payment integration.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+
+    <form>
+        <input type="text" value="Vinisha" required>
+
+        <input type="email" value="Vinisharavikumar2007@gmail.com" required>
+
+        <textarea rows="5" placeholder="Your Message"> Hello,
+
+Thank you for visiting my portfolio. I am always interested in discussing new projects, internship opportunities, collaborations, and innovative ideas.
+
+Feel free to reach out if you'd like to work together or have any questions. I will get back to you as soon as possible.
+
+Looking forward to connecting with you!
+
+Best Regards,
+Vinisha
+</textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Vinisha Portfolio | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

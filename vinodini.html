@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vinodini G — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#080b14;
+  --bg2:#0d1120;
+  --card:#111827;
+  --border:#1e2a42;
+  --border-hover:#3b5bdb;
+  --blue:#4f7df3;
+  --blue-light:#7ca1ff;
+  --blue-glow:rgba(79,125,243,0.18);
+  --text:#e8edf8;
+  --muted:#6b7fa3;
+  --dim:#3a4a68;
+  --white:#ffffff;
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  font-size:16px;
+  line-height:1.7;
+}
+
+a{text-decoration:none;color:inherit;}
+
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px;}
+
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(8,11,20,0.85);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 6%;
+}
+.nav-logo{
+  font-family:'Sora',sans-serif;
+  font-size:17px;font-weight:700;
+  color:var(--white);
+  letter-spacing:-0.3px;
+}
+.nav-logo span{color:var(--blue);}
+nav ul{list-style:none;display:flex;gap:32px;}
+nav ul li a{
+  color:var(--muted);font-size:14px;font-weight:500;
+  transition:color .2s;letter-spacing:.2px;
+}
+nav ul li a:hover{color:var(--white);}
+.nav-btn{
+  padding:9px 22px;
+  background:var(--blue);color:var(--white);
+  border-radius:8px;font-size:13px;font-weight:600;
+  transition:background .2s;
+}
+.nav-btn:hover{background:var(--blue-light);}
+
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:100px 6% 80px;
+  position:relative;overflow:hidden;
+}
+
+.hero-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:60px;max-width:1000px;width:100%;position:relative;z-index:1;
+}
+
+.hero-text{flex:1;}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--blue);
+  margin-bottom:24px;
+}
+.eyebrow-line{
+  width:28px;height:1px;background:var(--blue);
+  opacity:.7;
+}
+
+.hero-text h1{
+  font-family:'Sora',sans-serif;
+  font-size:clamp(36px,5vw,58px);
+  font-weight:800;line-height:1.1;
+  letter-spacing:-1.5px;
+  color:var(--white);
+  margin-bottom:8px;
+}
+.hero-text h1 .name{
+  display:block;
+  color:var(--blue-light);
+}
+.hero-role{
+  font-size:16px;color:var(--muted);
+  margin-bottom:24px;font-weight:400;
+  letter-spacing:.3px;
+}
+.hero-role span{color:var(--dim);}
+.hero-desc{
+  color:#8494b8;font-size:16px;line-height:1.8;
+  max-width:420px;margin-bottom:36px;
+}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{
+  padding:13px 28px;
+  background:var(--blue);color:var(--white);
+  border-radius:9px;font-weight:600;font-size:14px;
+  transition:all .2s;
+}
+.btn-primary:hover{
+  background:var(--blue-light);
+  transform:translateY(-2px);
+}
+.btn-outline{
+  padding:13px 28px;
+  border:1px solid var(--border);
+  color:var(--muted);border-radius:9px;
+  font-size:14px;font-weight:500;
+  transition:all .2s;
+}
+.btn-outline:hover{
+  border-color:var(--blue);color:var(--blue);
+  transform:translateY(-2px);
+}
+
+.hero-photo{flex-shrink:0;}
+.photo-img{
+  width:220px;height:220px;border-radius:50%;
+  object-fit:cover;
+  border:3px solid var(--border);
+  display:block;
+}
+
+.section-wrap{
+  padding:90px 6%;
+  max-width:1060px;margin:0 auto;
+}
+.alt-bg{background:var(--bg2);}
+.alt-bg .section-wrap{max-width:100%;padding:90px 8%;}
+.alt-bg .section-wrap > *{max-width:1000px;margin-left:auto;margin-right:auto;}
+.alt-bg .section-wrap .grid-fix{max-width:1000px;margin:0 auto;}
+
+.tag-label{
+  font-size:11px;font-weight:700;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--blue);
+  margin-bottom:10px;
+  display:flex;align-items:center;gap:10px;
+}
+.tag-label::before{
+  content:'';display:block;
+  width:20px;height:1px;background:var(--blue);opacity:.6;
+}
+.sec-title{
+  font-family:'Sora',sans-serif;
+  font-size:clamp(26px,3.5vw,38px);
+  font-weight:700;letter-spacing:-1px;
+  color:var(--white);margin-bottom:14px;
+}
+.sec-sub{
+  color:var(--muted);font-size:16px;line-height:1.75;
+  max-width:580px;margin-bottom:50px;
+}
+
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;align-items:start;
+}
+.about-body p{
+  color:#8494b8;font-size:15.5px;line-height:1.85;margin-bottom:16px;
+}
+.about-body p strong{color:var(--blue-light);}
+.about-info{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:16px;padding:32px;
+}
+.info-row{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px 0;border-bottom:1px solid var(--border);
+}
+.info-row:last-child{border-bottom:none;padding-bottom:0;}
+.info-row:first-child{padding-top:0;}
+.info-icon{
+  font-size:18px;width:36px;height:36px;
+  background:var(--blue-glow);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.info-key{font-size:11px;color:var(--dim);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
+.info-val{font-size:14px;color:var(--text);font-weight:500;}
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+}
+.skill-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;padding:24px;
+  transition:border-color .25s,transform .25s,box-shadow .25s;
+  position:relative;overflow:hidden;
+}
+.skill-card::after{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--blue),#818cf8);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s;
+}
+.skill-card:hover::after{transform:scaleX(1);}
+.skill-card:hover{
+  border-color:var(--border-hover);
+  transform:translateY(-4px);
+  box-shadow:0 16px 40px rgba(79,125,243,.12);
+}
+.skill-icon{
+  font-size:22px;margin-bottom:14px;
+  width:44px;height:44px;
+  background:var(--blue-glow);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+}
+.skill-card h3{
+  font-family:'Sora',sans-serif;
+  font-size:15px;font-weight:700;color:var(--white);margin-bottom:8px;
+}
+.skill-card p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px;}
+.tags{display:flex;flex-wrap:wrap;gap:6px;}
+.tag{
+  background:rgba(79,125,243,.1);
+  color:var(--blue-light);
+  border:1px solid rgba(79,125,243,.2);
+  font-size:11px;font-weight:600;
+  padding:3px 10px;border-radius:5px;
+  letter-spacing:.3px;
+}
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+.proj-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;padding:28px;
+  display:flex;flex-direction:column;
+  transition:border-color .25s,transform .25s,box-shadow .25s;
+  position:relative;
+}
+.proj-card.featured{
+  border-color:rgba(79,125,243,.4);
+  background:linear-gradient(135deg,#111827,#0f1a2e);
+}
+.proj-card:hover{
+  border-color:var(--border-hover);
+  transform:translateY(-5px);
+  box-shadow:0 20px 50px rgba(79,125,243,.13);
+}
+.proj-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  margin-bottom:16px;
+}
+.proj-badge{
+  font-size:10px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--blue);
+  background:rgba(79,125,243,.1);
+  border:1px solid rgba(79,125,243,.2);
+  padding:4px 10px;border-radius:5px;
+}
+.proj-badge.star{color:#f5a623;background:rgba(245,166,35,.08);border-color:rgba(245,166,35,.2);}
+.proj-card h3{
+  font-family:'Sora',sans-serif;
+  font-size:17px;font-weight:700;
+  color:var(--white);margin-bottom:10px;line-height:1.3;
+}
+.proj-card p{
+  font-size:14px;color:var(--muted);flex:1;line-height:1.7;
+}
+.proj-card .tags{margin-top:20px;}
+
+.contact-box{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:60px 50px;
+  text-align:center;
+  max-width:720px;margin:0 auto;
+}
+.contact-box .sec-title{margin-bottom:12px;}
+.contact-box p{color:var(--muted);font-size:15px;max-width:440px;margin:0 auto 36px;}
+.contact-links{
+  display:flex;justify-content:center;gap:12px;flex-wrap:wrap;
+}
+.cl{
+  display:flex;align-items:center;gap:8px;
+  background:var(--bg);border:1px solid var(--border);
+  color:var(--muted);padding:12px 22px;
+  border-radius:10px;font-size:14px;font-weight:500;
+  transition:all .2s;
+}
+.cl:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);}
+
+footer{
+  border-top:1px solid var(--border);
+  padding:30px 6%;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;
+}
+.footer-left{
+  font-family:'Sora',sans-serif;
+  font-size:14px;color:var(--dim);
+}
+.footer-left span{color:var(--blue);}
+.footer-right{
+  display:flex;gap:24px;
+}
+.footer-right a{font-size:13px;color:var(--dim);transition:color .2s;}
+.footer-right a:hover{color:var(--blue);}
+
+@media(max-width:860px){
+  .hero-inner{flex-direction:column-reverse;text-align:center;}
+  .hero-desc{margin:0 auto 36px;}
+  .hero-btns{justify-content:center;}
+  .eyebrow{justify-content:center;}
+  .about-grid{grid-template-columns:1fr;}
+  footer{flex-direction:column;text-align:center;}
+}
+@media(max-width:600px){
+  nav ul{display:none;}
+  .contact-box{padding:40px 24px;}
+  .alt-bg .section-wrap{padding:70px 5%;}
+  .section-wrap{padding:70px 5%;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Portfolio<span>.</span></div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact" class="nav-btn">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Portfolio · 2025</div>
+      <h1>
+        Hi, I'm
+        <span class="name">Vinodini G</span>
+      </h1>
+      <p class="hero-role">CSE Student <span>·</span> Full Stack Developer <span>·</span> Java Enthusiast</p>
+      <p class="hero-desc">
+        I'm a Computer Science Engineering student at Erode Sengunthar Engineering College,
+        passionate about building real-world web applications and solving practical problems through code.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View Projects →</a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="images/vinodini.jpeg" alt="Vinodini G" class="photo-img"/>
+    </div>
+  </div>
+</section>
+
+<div class="alt-bg" id="about">
+  <div class="section-wrap">
+    <div style="max-width:1000px;margin:0 auto;">
+      <div class="tag-label">Who I Am</div>
+      <h2 class="sec-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-body">
+          <p>
+            I'm currently pursuing my <strong>B.E. in Computer Science Engineering</strong> at
+            Erode Sengunthar Engineering College. My studies have covered data structures,
+            algorithms, web development, databases, and software engineering fundamentals.
+          </p>
+          <p>
+            I enjoy building real-world projects — from Java-based web apps using JSP and
+            Servlets to fully styled front-end websites. I believe technology should solve
+            real problems in simple, effective ways.
+          </p>
+          <p>
+            Outside of coding, I explore content creation and side projects that combine
+            technology with everyday challenges.
+          </p>
+        </div>
+
+        <div class="about-info">
+          <div class="info-row">
+            <div class="info-icon">🎓</div>
+            <div>
+              <div class="info-key">Degree</div>
+              <div class="info-val">B.E. Computer Science Engineering</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">🏫</div>
+            <div>
+              <div class="info-key">College</div>
+              <div class="info-val">Erode Sengunthar Engineering College</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📍</div>
+            <div>
+              <div class="info-key">Location</div>
+              <div class="info-val">Erode, Tamil Nadu</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📧</div>
+            <div>
+              <div class="info-key">Email</div>
+              <div class="info-val">vinodini2437@gmail.com</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📱</div>
+            <div>
+              <div class="info-key">Phone</div>
+              <div class="info-val">+91 9080699606</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">💼</div>
+            <div>
+              <div class="info-key">Focus</div>
+              <div class="info-val">Full Stack Development · Java</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="skills">
+  <div class="section-wrap">
+    <div class="tag-label">What I Know</div>
+    <h2 class="sec-title">Skills & Technologies</h2>
+    <p class="sec-sub">A snapshot of the tools and technologies I work with to build full-stack applications.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">☕</div>
+        <h3>Java Development</h3>
+        <p>Building backend systems and web apps using Core Java, JSP, and Servlets with MVC architecture.</p>
+        <div class="tags">
+          <span class="tag">Java</span>
+          <span class="tag">JSP</span>
+          <span class="tag">Servlets</span>
+          <span class="tag">JavaMail</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <h3>Web Technologies</h3>
+        <p>Creating responsive web interfaces with semantic HTML, modern CSS layouts, and JavaScript.</p>
+        <div class="tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🗄️</div>
+        <h3>Database Management</h3>
+        <p>Designing and querying relational databases for efficient and reliable data storage.</p>
+        <div class="tags">
+          <span class="tag">MySQL</span>
+          <span class="tag">JDBC</span>
+          <span class="tag">SQL</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🛠️</div>
+        <h3>Dev Tools</h3>
+        <p>Working with industry-standard development, deployment, and version control tools.</p>
+        <div class="tags">
+          <span class="tag">NetBeans</span>
+          <span class="tag">Tomcat</span>
+          <span class="tag">Git</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🧠</div>
+        <h3>Algorithms & DSA</h3>
+        <p>Strong foundation in data structures, algorithms, and computational problem solving.</p>
+        <div class="tags">
+          <span class="tag">Backtracking</span>
+          <span class="tag">DP</span>
+          <span class="tag">Graphs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="alt-bg" id="projects">
+  <div class="section-wrap">
+    <div style="max-width:1000px;margin:0 auto;">
+      <div class="tag-label">What I've Built</div>
+      <h2 class="sec-title">Projects</h2>
+      <p class="sec-sub">A selection of projects that showcase my skills across backend, frontend, and full-stack development.</p>
+      <div class="projects-grid">
+        <div class="proj-card featured">
+          <div class="proj-top">
+            <span class="proj-badge star">⭐ Featured</span>
+          </div>
+          <h3>Automated Fee Reminder System</h3>
+          <p>A Java web app using JSP and Servlets that sends automated fee reminder emails via Gmail SMTP. Includes a student management dashboard and fee tracking module built on Apache Tomcat.</p>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">JSP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">JavaMail</span>
+            <span class="tag">Tomcat</span>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-top">
+            <span class="proj-badge">Personal</span>
+          </div>
+          <h3>Personal Portfolio Website</h3>
+          <p>A responsive portfolio website built with HTML and CSS to showcase my projects, skills, and contact details with a clean dark-themed design.</p>
+          <div class="tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-top">
+            <span class="proj-badge">Team</span>
+          </div>
+          <h3>E-Commerce Website</h3>
+          <p>An online shopping platform with product listings, cart management, user login, and order tracking, built with Java Servlets and MySQL.</p>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">Servlet</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">JDBC</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div id="contact">
+  <div class="section-wrap">
+    <div class="contact-box">
+      <div class="tag-label" style="justify-content:center;">Let's Connect</div>
+      <h2 class="sec-title">Get In Touch</h2>
+      <p>I'm open to internship opportunities, academic collaborations, and interesting project ideas. Feel free to reach out!</p>
+      <div class="contact-links">
+        <a href="mailto:vinodini2437@gmail.com" class="cl">📧 vinodini2437@gmail.com</a>
+        <a href="https://github.com/" target="_blank" class="cl">🐙 GitHub</a>
+        <a href="https://linkedin.com/in/" target="_blank" class="cl">🔗 LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-left">Vinodini<span>.</span> · Erode Sengunthar Engineering College</div>
+  <div class="footer-right">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+</body>
+</html>
